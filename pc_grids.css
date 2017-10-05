@@ -17,20 +17,20 @@
 div.row {
   clear: both;
 }
-/*makes sure the rows always start on a new line and clear floated items*/
+/*makes sure the rows always start on a new line and clear floated items...stabilizes layout. Precaution.*/
 div.row::after {
   clear: both;
   content: "";
   display: table;
 }
-/*grid row expands to cover all of floating columns*/
+/*grid row expands to cover all of floating columns...this prevents container collapse. Situates page so that floating does not wreck the rest of the layout*/
 
 
 /* Grid Columns Styles */
 div[class^="col-"] {
   float: left;
 }
-/*class^="col-" means it is styling all div elements whose class attribute starts with col-*/
+/*class^="col-" means it is styling all div elements whose class attribute starts with "col-" -- way more efficient than putting float left; in every single one*/
 /*floating every column on the left margin (so they appear side by side )*/
 div.col-1-1 {
   width: 100%;
@@ -50,10 +50,9 @@ div.col-1-4 {
 div.col-3-4 {
   width: 75%;
 }
-/*setting the widths of all columns based on their name...numerator over denomonator: col-1-4 is 1/4 of the parent*/
-
-
-
-
+/*setting the widths of all columns based on their name...numerator over denomonator: col-1-4 is 1/4 of the parent or 25%*/
 
 /* Grid Outline Styles */
+div {
+  outline: 1px solid red;
+}
